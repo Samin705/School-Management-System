@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="smsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adminid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adminname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="adminpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="assignment">
+    <Key>
+      <PropertyRef Name="assignmentid" />
+    </Key>
+    <Property Name="assignmentid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="directory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="duedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="class">
+    <Key>
+      <PropertyRef Name="classid" />
+    </Key>
+    <Property Name="classid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="classname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coursenotice">
+    <Key>
+      <PropertyRef Name="noticeid" />
+    </Key>
+    <Property Name="noticeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noticesubject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="noticedescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="generalnotice">
+    <Key>
+      <PropertyRef Name="noticeid" />
+    </Key>
+    <Property Name="noticeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noticesubject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="noticedescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postdate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="grade">
+    <Key>
+      <PropertyRef Name="gradeid" />
+    </Key>
+    <Property Name="gradeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="classname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sectionname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subjectname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quiz1" Type="Int32" Nullable="false" />
+    <Property Name="quiz2" Type="Int32" Nullable="false" />
+    <Property Name="assignment1" Type="Int32" Nullable="false" />
+    <Property Name="halfyearlygrade" Type="Int32" Nullable="false" />
+    <Property Name="quiz3" Type="Int32" Nullable="false" />
+    <Property Name="quiz4" Type="Int32" Nullable="false" />
+    <Property Name="assignment2" Type="Int32" Nullable="false" />
+    <Property Name="finalexamgrade" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="homework">
+    <Key>
+      <PropertyRef Name="homeworkid" />
+    </Key>
+    <Property Name="homeworkid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="directory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="duedate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="live">
+    <Key>
+      <PropertyRef Name="liveid" />
+    </Key>
+    <Property Name="liveid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+    <Property Name="liveurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="routine">
+    <Key>
+      <PropertyRef Name="routineid" />
+    </Key>
+    <Property Name="routineid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="section">
+    <Key>
+      <PropertyRef Name="sectionid" />
+    </Key>
+    <Property Name="sectionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sectionname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="classid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentdob" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="studentphone" Type="Int32" Nullable="false" />
+    <Property Name="studentaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentemail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentbloodgroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentfees" Type="Int32" Nullable="false" />
+    <Property Name="classid" Type="Int32" Nullable="false" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="subjectid" />
+    </Key>
+    <Property Name="subjectid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="subjectname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="classid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="superadmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="superadminid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="superadminname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="superadminpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="teacherid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teachername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teacherpassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teacherbloodgroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teacheremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teacherphone" Type="Int32" Nullable="false" />
+    <Property Name="classid" Type="Int32" Nullable="false" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+    <Property Name="teachersalary" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="timeslot">
+    <Key>
+      <PropertyRef Name="timeslotid" />
+    </Key>
+    <Property Name="timeslotid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+    <Property Name="routineid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tpe">
+    <Key>
+      <PropertyRef Name="tpeid" />
+    </Key>
+    <Property Name="tpeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="teacherid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="studentid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="q1" Type="Int32" Nullable="false" />
+    <Property Name="q2" Type="Int32" Nullable="false" />
+    <Property Name="q3" Type="Int32" Nullable="false" />
+    <Property Name="q4" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uploadnote">
+    <Key>
+      <PropertyRef Name="uploadid" />
+    </Key>
+    <Property Name="uploadid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="directory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sectionid" Type="Int32" Nullable="false" />
+    <Property Name="subjectid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="smsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="assignments" EntityType="Self.assignment" />
+    <EntitySet Name="classes" EntityType="Self.class" />
+    <EntitySet Name="coursenotices" EntityType="Self.coursenotice" />
+    <EntitySet Name="generalnotices" EntityType="Self.generalnotice" />
+    <EntitySet Name="grades" EntityType="Self.grade" />
+    <EntitySet Name="homework" EntityType="Self.homework" />
+    <EntitySet Name="lives" EntityType="Self.live" />
+    <EntitySet Name="routines" EntityType="Self.routine" />
+    <EntitySet Name="sections" EntityType="Self.section" />
+    <EntitySet Name="students" EntityType="Self.student" />
+    <EntitySet Name="subjects" EntityType="Self.subject" />
+    <EntitySet Name="superadmins" EntityType="Self.superadmin" />
+    <EntitySet Name="teachers" EntityType="Self.teacher" />
+    <EntitySet Name="timeslots" EntityType="Self.timeslot" />
+    <EntitySet Name="tpes" EntityType="Self.tpe" />
+    <EntitySet Name="uploadnotes" EntityType="Self.uploadnote" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Mid_SchoolManagementSystem.Models.DataAccess.admin>
+
+@{
+    ViewBag.Title = "ListAdmin";
+    Layout = "~/Views/Shared/_SuperLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List Admin</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "CreateAdmin")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.adminid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adminname)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.adminid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.adminname)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditAdmin", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "DeleteAdmin", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Mid_SchoolManagementSystem.Models.DataAccess.grade>
+
+@{
+    ViewBag.Title = "Grades";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>Grades</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.classname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sectionname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subjectname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quiz1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quiz2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assignment1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.halfyearlygrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quiz3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quiz4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.assignment2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.finalexamgrade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.classname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sectionname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subjectname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quiz1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quiz2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assignment1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.halfyearlygrade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quiz3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quiz4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.assignment2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.finalexamgrade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditGrades", new { id=item.gradeid }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.gradeid }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.gradeid })*@
+        </td>
+    </tr>
+}
+
+</table>

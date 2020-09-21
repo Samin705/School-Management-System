@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        #header {
+            background-color: #66488C;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        #footer {
+            clear: both;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            background-color: #484F8C;
+        }
+
+        #main {
+            float: left;
+            width: 100%;
+            background-color: #C4C6FF;
+            text-align: center;
+            height: 600px;
+        }
+
+        #fieldsetposition {
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><h2>SCHOOL MANAGEMENT SYSTEM</h2></div>
+    <div id="main">@RenderBody()</div>
+    <div id="footer"><h4>APWDN MID</h4></div>
+</body>
+</html>

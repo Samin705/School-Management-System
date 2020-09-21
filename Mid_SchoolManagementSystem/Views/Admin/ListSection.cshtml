@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Mid_SchoolManagementSystem.Models.DataAccess.section>
+
+@{
+    ViewBag.Title = "ListSection";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListSection</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "CreateSection")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sectionname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classid)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sectionname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classid)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditSection", new { id = item.sectionid }) |
+                    
+                    @Html.ActionLink("Delete", "DeleteSection", new { id = item.sectionid })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

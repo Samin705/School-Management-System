@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Mid_SchoolManagementSystem.Models.DataAccess.teacher>
+
+@{
+    ViewBag.Title = "ListTeacher";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListTeacher</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "CreateTeacher")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.teachername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teacherbloodgroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teacheremail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teacherphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sectionid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subjectid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teachersalary)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.teachername)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.teacherbloodgroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.teacheremail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.teacherphone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sectionid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subjectid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.teachersalary)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditTeacher", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "DeleteTeacher", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

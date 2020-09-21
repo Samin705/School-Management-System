@@ -1,0 +1,80 @@
+﻿@model Mid_SchoolManagementSystem.Models.DataAccess.uploadnote
+
+@{
+    ViewBag.Title = "UploadFile";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<h2>UploadFile</h2>
+
+
+@using (Html.BeginForm("UploadFile", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    {
+
+        <div class="form-group">
+            @Html.TextBox("file", "", new { type = "file" }) <br />
+
+            <input type="submit" value="Upload" />
+
+            @ViewBag.Message
+
+        </div>
+
+        <div>
+            @Html.ActionLink("Clear", "UploadFile")
+        </div>
+    }
+}
+
+@*<div class="form-group">
+        @Html.LabelFor(model => model.directory, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.directory, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.directory, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+@*<div class="form-group">
+        @Html.LabelFor(model => model.filename, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.filename, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.filename, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.datetime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.datetime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.datetime, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+@*<div class="form-group">
+        @Html.LabelFor(model => model.sectionid, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("sectionid", (IEnumerable<SelectListItem>)ViewData["sectionlist"])
+            @Html.ValidationMessageFor(model => model.sectionid, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.subjectid, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("subjectid", (IEnumerable<SelectListItem>)ViewData["subjectlist"])
+            @Html.ValidationMessageFor(model => model.subjectid, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+@*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>*@
+
+
+
+<div>
+    @Html.ActionLink("Back to Home Page", "TeacherIndex")
+</div>

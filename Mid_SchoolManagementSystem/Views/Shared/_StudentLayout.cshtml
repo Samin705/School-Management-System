@@ -1,0 +1,88 @@
+﻿
+
+<html>
+<head>
+
+    <title>@ViewBag.Title</title>
+
+    <style>
+        #header {
+            background-color: #66488C;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        #sidebar-left {
+            float: left;
+            width: 20%;
+            background-color: #4b4276;
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #bdb8d7;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+            .sidebar ul li a {
+                color: #bdb8d7;
+                display: block;
+            }
+
+            .sidebar ul li:hover {
+                background-color: #8676A6;
+            }
+
+                .sidebar ul li:hover a {
+                    color: #fff;
+                }
+
+        #main {
+            float: left;
+            width: 76%;
+            background-color: #C4C6FF;
+            padding-left: 50px;
+            padding-top: 50px;
+            min-height: 72%
+        }
+
+        #footer {
+            clear: both;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            background-color: #484F8C;
+        }
+
+        #sidebar-left, #main, #sidebar-right {
+            min-height: 80%
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><h2>SCHOOL MANAGEMENT SYSTEM</h2></div>
+    <div id="sidebar-left">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <ul style="list-style: none;">
+                <li><a href="/Student/EditStudentProfile">Manage Profile</a></li>
+                <li><a href="/Student/CheckGrades">Check Grades</a></li>
+                <li><a href="/User/Logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">@RenderBody()</div>
+    <div id="footer"><h4>APWDN MID</h4></div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="smsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="adminname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="adminpassword" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="assignment">
+    <Key>
+      <PropertyRef Name="assignmentid" />
+    </Key>
+    <Property Name="assignmentid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="directory" Type="varchar(max)" Nullable="false" />
+    <Property Name="postdate" Type="datetime" Nullable="false" />
+    <Property Name="duedate" Type="datetime" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="class">
+    <Key>
+      <PropertyRef Name="classid" />
+    </Key>
+    <Property Name="classid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="classname" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coursenotice">
+    <Key>
+      <PropertyRef Name="noticeid" />
+    </Key>
+    <Property Name="noticeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noticesubject" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="noticedescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="generalnotice">
+    <Key>
+      <PropertyRef Name="noticeid" />
+    </Key>
+    <Property Name="noticeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noticesubject" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="noticedescription" Type="varchar(max)" Nullable="false" />
+    <Property Name="postdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="grade">
+    <Key>
+      <PropertyRef Name="gradeid" />
+    </Key>
+    <Property Name="gradeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="classname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sectionname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subjectname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="studentname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="quiz1" Type="int" Nullable="false" />
+    <Property Name="quiz2" Type="int" Nullable="false" />
+    <Property Name="assignment1" Type="int" Nullable="false" />
+    <Property Name="halfyearlygrade" Type="int" Nullable="false" />
+    <Property Name="quiz3" Type="int" Nullable="false" />
+    <Property Name="quiz4" Type="int" Nullable="false" />
+    <Property Name="assignment2" Type="int" Nullable="false" />
+    <Property Name="finalexamgrade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="homework">
+    <Key>
+      <PropertyRef Name="homeworkid" />
+    </Key>
+    <Property Name="homeworkid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="filename" Type="varchar(max)" Nullable="false" />
+    <Property Name="directory" Type="varchar(max)" Nullable="false" />
+    <Property Name="postdate" Type="datetime" Nullable="false" />
+    <Property Name="duedate" Type="datetime" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="live">
+    <Key>
+      <PropertyRef Name="liveid" />
+    </Key>
+    <Property Name="liveid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+    <Property Name="liveurl" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="routine">
+    <Key>
+      <PropertyRef Name="routineid" />
+    </Key>
+    <Property Name="routineid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="section">
+    <Key>
+      <PropertyRef Name="sectionid" />
+    </Key>
+    <Property Name="sectionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sectionname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="classid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="studentid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="studentname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="studentpassword" Type="varchar(max)" Nullable="false" />
+    <Property Name="studentdob" Type="date" Nullable="false" />
+    <Property Name="studentphone" Type="int" Nullable="false" />
+    <Property Name="studentaddress" Type="varchar(max)" Nullable="false" />
+    <Property Name="studentemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="studentbloodgroup" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="studentfees" Type="int" Nullable="false" />
+    <Property Name="classid" Type="int" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="subjectid" />
+    </Key>
+    <Property Name="subjectid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subjectname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="classid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="superadmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="superadminid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="superadminname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="superadminpassword" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="teacherid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="teachername" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="teacherpassword" Type="varchar(max)" Nullable="false" />
+    <Property Name="teacherbloodgroup" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="teacheremail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="teacherphone" Type="int" Nullable="false" />
+    <Property Name="classid" Type="int" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+    <Property Name="teachersalary" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="timeslot">
+    <Key>
+      <PropertyRef Name="timeslotid" />
+    </Key>
+    <Property Name="timeslotid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="day" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+    <Property Name="routineid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tpe">
+    <Key>
+      <PropertyRef Name="tpeid" />
+    </Key>
+    <Property Name="tpeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="teacherid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="studentid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="q1" Type="int" Nullable="false" />
+    <Property Name="q2" Type="int" Nullable="false" />
+    <Property Name="q3" Type="int" Nullable="false" />
+    <Property Name="q4" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uploadnote">
+    <Key>
+      <PropertyRef Name="uploadid" />
+    </Key>
+    <Property Name="uploadid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="directory" Type="varchar(max)" Nullable="false" />
+    <Property Name="filename" Type="varchar(max)" Nullable="false" />
+    <Property Name="datetime" Type="datetime" Nullable="false" />
+    <Property Name="sectionid" Type="int" Nullable="false" />
+    <Property Name="subjectid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="smsModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="assignment" EntityType="Self.assignment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="class" EntityType="Self.class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="coursenotice" EntityType="Self.coursenotice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="generalnotice" EntityType="Self.generalnotice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="grade" EntityType="Self.grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="homework" EntityType="Self.homework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="live" EntityType="Self.live" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="routine" EntityType="Self.routine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="section" EntityType="Self.section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subject" EntityType="Self.subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="superadmin" EntityType="Self.superadmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teacher" EntityType="Self.teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="timeslot" EntityType="Self.timeslot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tpe" EntityType="Self.tpe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uploadnote" EntityType="Self.uploadnote" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Mid_SchoolManagementSystem.Models.DataAccess.student>
+
+@{
+    ViewBag.Title = "ListStudent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListStudent</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "CreateStudent")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.studentid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentdob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentaddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentbloodgroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentfees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sectionid)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentdob)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentphone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentaddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentemail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentbloodgroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.studentfees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sectionid)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditStudent", new { id = item.id }) |
+                    @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                    @Html.ActionLink("Delete", "DeleteStudent", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
